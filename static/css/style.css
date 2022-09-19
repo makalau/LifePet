@@ -1,0 +1,344 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html, body{
+    height: 100%;
+}
+
+body{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color:rgb(85, 127, 206);
+}
+
+/*  ---------  CABEÇALHO HEADER DA PÁGINA ------------*/
+.cabecalho{
+    width: 100%;
+    height: 80px;
+    background-color:rgb(3, 3, 48);
+    display: flex;
+    align-items: center;
+}
+
+.header-icon img{
+    position: relative;
+    margin-left: 20px;
+    width: 60px;
+    height: 60px;
+}
+
+.menu ul{
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    list-style-type: none;
+}
+
+.menu a{
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.menu a:hover{
+    text-shadow: 0px 0px 15px blueviolet, 0px 0px 5px blueviolet;
+}
+
+
+/* ATENÇÃO!! - CONTEÚDO PÁGINA BASE */
+.principal{
+    display: block;
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* -------------- PÁGINA CONSULTA ----------------- */
+
+/* SECTION CONSULTA */
+.container-consulta{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* DIV CONSULTA DENTRO DA SECTION */
+.consulta{
+    background-color: rgb(221, 207, 230);
+    width: 50%;
+    border-radius: 3px;
+    border: 2px solid black;
+}
+
+.consulta div{
+    position: relative;
+    width: 90%;
+    background-color: rgb(27, 25, 25);
+    border: 1px solid rgb(27, 25, 25);
+    border-radius: 5px;
+    padding: 0.5px;
+    margin: 50px auto 50px auto;
+}
+
+.consulta input, input:focus{
+    width: 90%;
+    text-align: center;
+    height: 20px;
+    padding: 2px;
+    font-size: 16px;
+    border: 1px solid black;
+}
+
+.consulta select{
+    background-color: black;
+    position: absolute;
+    min-height: 22px;
+    font-size: 15px;
+    right: 0;
+    color: #fff;
+    font-weight: 15px;
+    border-radius: 4px;
+    border: 0;
+    text-align: center;
+    bottom: 0;
+    top: 0;
+    cursor: pointer;
+}
+
+.fa-search{
+    position: absolute;
+    padding: 3px;
+    padding-top: 3px;
+    min-width: 20px;
+    bottom: 0;
+    top: 0;
+    border: 1px solid black;
+    border-radius: 3px;
+    font-weight: 15px;
+    font-size: 15px;
+    background-color: black;
+    color: #fff;
+    left: 0;
+    cursor: pointer;
+}
+
+.consulta h1{
+    font-size: 25px;
+    text-align: center;
+    background-color: yellow;
+    border: 1px solid black;
+}
+
+/* ALTERAR O SCROLLBAR DA PÁG  */
+*::-webkit-scrollbar{
+    width: 12px;
+}
+*::-webkit-scrollbar-track{
+    width: 12px;
+    box-shadow: inset 0 0 .3rem #00000050;
+    background-color: #fff;
+}
+*::-webkit-scrollbar-thumb{
+    background-color: #161a5a;
+}
+
+/* CLASSES DE HIERARQUIA DE TÍTULOS */
+.title{
+    color: orange;
+    background-color: seagreen;
+    text-shadow: 1px 1px 1px black;
+    font-size: 40px;
+    text-align: center;
+}
+
+.subtitle{
+    text-align: center;
+    color: #fff;
+    background-color: #161a5a;
+    text-shadow: 1px 1px 1px black;
+}
+
+/* ------------ PÁGINA DE CADASTRO ------------- */    
+.cadastro{
+    position: relative;
+    background-color: #dddddd;
+    border-radius: 8px;
+    min-width: 80%;
+    min-height: 30%;
+    border: 3px solid slategray;
+}
+
+.cadastro label{
+    display: block;
+    text-align: center;
+}
+
+.grid-container{
+    position: relative;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    padding: 10px;
+    gap: 20px 0px;
+}
+.grid-item{
+    margin: 0px auto 0px auto;
+}
+
+.grid-item input{
+    width: 200px;
+    height: 23px;
+    border: 1px solid rgb(59, 57, 57);
+    border-radius: 5px;
+}
+
+.grid-item input:focus{
+    box-shadow: 0 0 0 0;
+    outline: 0;
+    background-color: rgba(198, 199, 235, 0.671);
+}
+
+.grid-container-center{
+    display: grid;
+    grid-template-columns: auto;
+    gap: 50px 0px;
+    margin-bottom: 50px;
+}
+
+.grid-container-center .grid-item{
+    padding-top: 30px;
+}
+.grid-container-center textarea{
+    outline: 0;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:rgb(27, 25, 25);
+    border-radius: 8px;
+    height: 120px;
+    font-size: 17px;
+    padding: 15px;
+
+}
+.grid-container-center textarea:focus{
+    background-color: rgb(198, 199, 235);
+}
+
+.dados-pet{
+    position: relative;
+    width: 50%;
+    margin: 20px auto 20px auto;
+    background-color: #424672;
+    border-radius: 8px;
+    min-height: 120px;
+}
+.botão{
+    display: block;
+    position: relative;
+    margin: 10px auto 0px auto;  
+    padding: 5px;
+    border-radius: 5px;
+    background-color: rgb(184, 17, 45);
+    color: #fff;
+    font-size: 15px;
+    border: 2px solid black;
+    cursor: pointer;
+}
+.botão:hover{
+    background-color: red;
+
+}
+
+.dados-pet input:focus{
+    border: 0;
+    outline: 0;
+    box-shadow: 0 0 0 0;
+    height: 25px;
+    background-color: #fff;
+}
+.dados-pet select:focus{
+    border: 0;
+    outline: 0;
+    box-shadow: 0 0 0 0;
+    height: 20px;
+    background-color: #fff;
+}
+
+.dados-pet .grid-container{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding-left: 0;
+
+}
+.dados-pet .grid-item select{
+    display: block;
+    margin: 5px auto 0px auto;
+    font-size: 15px;
+    padding: 0;
+}
+.dados-pet .grid-item input{
+    display: block;
+    margin: 5px auto 0px auto;
+    font-size: 15px;
+    padding: 0;
+}
+
+.dados-pet label{
+    background-color: orange;
+}
+
+/* ------------ RODAPÉ DA PÁGINA ------------ */
+.rodape{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    position: relative;
+    width: 100%;
+    height: 50px;
+    bottom: 0;
+    color: #fff;
+    background-color:rgb(3, 3, 48);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* RESPONSIVIDADE */
+
+@media only screen and (max-device-width: 823px){
+    body{
+        overflow-x: hidden;
+    }
+    .principal{
+        display: block;
+    }
+    .menu li{
+        display: none;
+    }
+    .grid-container{
+        display: grid;
+        grid-template-columns: auto;
+    }
+    .dados-pet .grid-container{
+        display: grid;
+        grid-template-columns: auto;
+    }
+    .dados-pet .grid-item input{
+        max-width: 100px;
+    }
+}
+
+@media only screen and (max-device-width: 369px){
+    .grid-container-center textarea{
+        display: block;
+        width: 70%;
+        margin: 0px auto 0px auto;
+    }
+}
+
+@media only screen and (max-device-width: 225px){
+    .grid-item{
+        display: none;
+    }
+
+}

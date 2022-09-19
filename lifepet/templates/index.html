@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/413e1b4429.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href={% static "css/style.css" %}>
+    <link rel="shortcut icon" href={% static "images/icone2.png" %}>
+    <title>{% block title %}  {% endblock %}</title>
+</head>
+<body>
+    <header class="cabecalho">
+        <nav class="menu">
+            <ul>
+                <figure class="header-icon">
+                <img src={% static "images/cachorro-brittany.png" %} alt="">
+                </figure>
+                <li><a href="/">Início</a></li>
+                <li><a href="cadastro">Cadastrar Clientes</a></li> 
+                <li><a href="#">Tarefas</a></li> 
+            </ul>
+        </nav>
+    </header>
+    
+    <main class="principal">
+        {% block content %}
+
+        {% endblock %}
+    </main>
+    
+    <footer class="rodape">
+        <p>&copy LifePet by Marcelo Victor</p>
+    </footer>
+    <script src="static/js/scripts.js"></script>
+</body>
+</html>

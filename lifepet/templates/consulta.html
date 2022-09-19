@@ -1,0 +1,45 @@
+{% extends "index.html" %}
+
+{% block title %} LifePet {% endblock %}
+
+{% block content %}
+<section class="container-consulta">
+    <div class="consulta">
+    <h1>Consulta de Clientes</h1>
+    <div class="center">
+    <i class="fas fa-search"></i>
+    <input type="text" name="search" placeholder="Busque por um cliente">
+    <select name="select">
+        <option value="nome">Nome</option>
+        <option value="email">Email</option>
+        <option value="telefone">Celular</option>
+    </select>
+    </div>
+
+    <!--Só irá aparecer se houver resultados compatíveis no Database-->
+    {% if consulta %}
+        <div class="results">
+            {% for valor in consulta %}
+                <a href="/search/{{valor.id}}" style="color: black; text-decoration:None;">
+                    <table>
+                    <!--COLGROUP span=-3 width="126"-->
+                    <tr nowrap>
+                        <th style="width: auto;">Nº.</th>
+                        <th>NOME</th>
+                        <th>TELEFONE</th>
+                        <th>ENDEREÇO</th>
+                        
+                    </tr>
+                    <tr nowrap>
+                        <td> {{valor.id}}</td>
+                        <td nowrap style="width: 32.6%;">{{valor.nome}}</td>
+                        <td>{{valor.telefone}}</td>
+                        <td>{{valor.local}}</td>
+                    </tr>
+                    </table>
+                </a>
+            {% endfor %}
+        </div>
+	{% endif %}
+</section>
+{% endblock %}

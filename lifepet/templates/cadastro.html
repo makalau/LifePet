@@ -1,0 +1,73 @@
+{% extends "index.html" %}
+
+{% block title %} Cadastro de Clientes {% endblock %}
+
+{% block content %}
+    <section class="cadastro">
+        <h1 class="title">Cadastro de Clientes</h1>
+        <h3 class="subtitle">Insira os dados dos clientes: </h3>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="grid-container">
+                <div class="grid-item">
+                <label><strong>Nome</strong></label>
+                {{form.nome}}
+                </div>
+                <div class="grid-item">
+                <label><strong>Nascimento</strong></label>
+                {{form.nascimento}}
+                </div>
+                <div class="grid-item">
+                <label><strong>Email</strong></label>
+                {{form.email}}
+                </div>
+                <div class="grid-item">
+                    <label><strong> Telefone </strong></label>
+                    {{form.nome}}
+                </div>
+                <div class="grid-item">
+                    <label><strong>Endereço</strong></label>
+                    {{form.nascimento}}
+                </div>
+                <div class="grid-item">
+                    <label><strong>Nº/ Complemento</strong></label>
+                    {{form.email}}
+                </div>
+                <div class="grid-item">
+                    <label><strong>Bairro</strong></label>
+                    {{form.nome}}
+                </div>
+                <div class="grid-item">
+                    <label><strong>CEP</strong></label>
+                    {{form.nascimento}}
+                </div>
+            </div>
+            <div class="grid-container-center">
+                <div class="grid-item">
+                    <label><strong>Observações</strong></label>
+                    {{form.obs}}
+                </div>
+            </div>
+            <hr>
+            <h1 class="title"> Dados do animal de estimação </h1>
+            <h3 class="subtitle">Preencha os dados do animação</h3>
+            <div class="dados-pet">
+                <div class="grid-container">
+                    <div class="grid-item">
+                        <label><strong>Espécie do Animal</strong></label>
+                        {{form.especie}}
+                    </div>
+                    <div class="grid-item">
+                        <label><strong>Raça</strong></label>
+                        {{form.raca}}
+                    </div>
+                    <div class="grid-item">
+                        <label><strong>Porte</strong></label>
+                        {{form.porte}}
+                    </div>
+                </div>
+                <button type="submit" class="botão">Cadastrar</button>
+            </div>
+        </form>
+    </section>
+{% endblock %}
