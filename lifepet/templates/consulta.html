@@ -7,6 +7,8 @@
     <div class="consulta">
     <h1>Consulta de Clientes</h1>
     <div class="center">
+    <form method="GET" autocomplete="off">
+        {% csrf_token %}
     <i class="fas fa-search"></i>
     <input type="text" name="search" placeholder="Busque por um cliente">
     <select name="select">
@@ -14,29 +16,30 @@
         <option value="email">Email</option>
         <option value="telefone">Celular</option>
     </select>
+    </form>
     </div>
-
+    
     <!--Só irá aparecer se houver resultados compatíveis no Database-->
     {% if consulta %}
-        <div class="results">
+        <div class="results" style="background-color: #fff;">
+            <h3 style="text-align: center;position: relative; background-color: black; color: #fff; text-shadow: 0.5px 0.3px 0.5px black;">Resultados encontrados no banco de dados: </h3>
             {% for valor in consulta %}
                 <a href="/search/{{valor.id}}" style="color: black; text-decoration:None;">
                     <table>
                     <!--COLGROUP span=-3 width="126"-->
                     <tr nowrap>
                         <th style="width: auto;">Nº.</th>
-                        <th>NOME</th>
-                        <th>TELEFONE</th>
-                        <th>ENDEREÇO</th>
+                        <th>Nome</th>
+                        <th>Telefone</th>
+
                         
                     </tr>
                     <tr nowrap>
                         <td> {{valor.id}}</td>
-                        <td nowrap style="width: 32.6%;">{{valor.nome}}</td>
+                        <td nowrap style="width: auto;" class="name-table">{{valor.nome}}</td>
                         <td>{{valor.telefone}}</td>
-                        <td>{{valor.local}}</td>
                     </tr>
-                    </table>
+                    </table>      
                 </a>
             {% endfor %}
         </div>

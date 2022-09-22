@@ -1,12 +1,20 @@
 {% extends "index.html" %}
 
-{% block title %} Cadastro de Clientes {% endblock %}
+{% block title %} {{form.nome.value}}{% endblock %}
 
 {% block content %}
     <section class="cadastro">
-        <h1 class="title">Cadastro de Clientes</h1>
-        <h3 class="subtitle">Insira os dados dos clientes: </h3>
-        <form method="post" autocomplete="off">
+        <h1 class="title">Dados cadadastrados do cliente:</h1>
+        <h3 class="subtitle">Matrícula: {{consulta.id}} |     Nome: {{form.nome.value}} |     Criado em: {{consulta.created_at.day}}/{{consulta.created_at.month}}/{{consulta.created_at.year}}</h3>
+        <hr>
+        <br>
+        <hgroup id="icones" style="display: flex; justify-content: center; align-items: center; gap: 18px;">
+            <i class="fas fa-edit" style="cursor: pointer; color: green;font-size: 20px;" id="editar" onclick="stdin();" style="margin-top: 0px;"></i>
+            <!--<p style="display:inline-block; position: relative; top: -27px; left: -35px;">Editar</p>-->
+            <i class="fas fa-trash" style="cursor: pointer;color: darkred;left: 40px; font-size: 20px;" onclick="deletar({{consulta.id}});"></i>
+            <!--<p style="display:inline-block; position: relative; top: -27px; left: 2px;">Deletar</p>-->
+        </hgroup>
+        <form method="post" autocomplete="off" class="formulario">
             {% csrf_token %}
             <div class="grid-container">
                 <div class="grid-item">
@@ -66,8 +74,17 @@
                         {{form.porte}}
                     </div>
                 </div>
-                <button type="submit" class="botão">Cadastrar</button>
+                <button type="button" class="botão" onclick="save()">Salvar</button>
             </div>
         </form>
+        <script>
+            input = document.querySelectorAll(".grid-container input");
+            objeto = document.querySelector(".grid-container input")
+            input.forEach((element) => {
+                element.disabled = true
+                element.style.backgroundColor = "#fff"
+                element.style.color = "black"      
+            });
+        </script>
     </section>
 {% endblock %}

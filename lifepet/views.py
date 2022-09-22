@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .models import Cadastro
 from .forms import CadastroForm
 
-def consultar(request):
+def consultar(request): 
     search = request.GET.get("search")
     select = request.GET.get("select")
     
@@ -22,14 +22,31 @@ def consultar(request):
         return render(request, "consulta.html")
 
 def search(request, id):
-    consulta = get_object_or_404(Cadastro, pk=id)
+    consulta = get_object_or_404(Cadastro, pk=id)        
     form = CadastroForm(instance=consulta)   
-    return render(request, "search.html", {"form":form, "consulta":consulta})
+    if request.method == "POST":
+        form = CadastroForm(request.POST, instance=consulta)
+        if form.is_valid():
+            form.save()
+            return redirect("/")
+        else:
+            return render(request, "search.html", {"form":form, "consulta":consulta})
+    
+    else:
+        return render(request, "search.html", {"form":form, "consulta":consulta})
 
 def cadastro(request):
     form = CadastroForm()
-    return render(request, "cadastro.html", {"form":form})
-        
+    if request.method == "POST":
+        form = CadastroForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("/")
+        else:
+            return render(request, "cadastro.html", {"form":form})
+    else: 
+        return render(request, "cadastro.html", {"form":form})
+
         
 def editar(request, id):
     consulta = get_object_or_404(Cadastro, pk=id)
